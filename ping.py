@@ -32,6 +32,7 @@ class Balls(Sprite):
             self.speedx *= -1
         super().update()
 
+#Сделать клавиши для 2 игрока
 class Player(Sprite):
     def update(self):
         key_pressed = key.get_pressed()
@@ -44,6 +45,7 @@ class Player(Sprite):
 
 ball = Balls('лол.jpg', 0, 0, 30, 30, 3, 3)
 Gamer1 = Player('GOC.jpg', 40, 0, 20, 70, 4, 4)
+Gamer2 = Player('GOC.jpg', 640, 0, 20, 70, 4, 4)
 
 while game:
     clock.tick(60)
@@ -54,5 +56,6 @@ while game:
     window.fill(( 0, 0, 255))
     ball.update()
     Gamer1.update()
+    Gamer2.update()
     
     display.update()
